@@ -13,7 +13,7 @@ export default class LeapYear extends React.Component {
         var isLeapYear = false;
         if(this.state.year % 400 === 0 ){
             isLeapYear = true;
-        } else if(this.state.year % 4 === 0){
+        } else if (this.state.year % 4 === 0 && this.state.year % 100 != 0){
             isLeapYear = true;
         }
         if(isLeapYear){

@@ -52,4 +52,9 @@ describe(("<LeapYear/> component"), () => {
         expect(wrapper.find("label").at(1).text()).toEqual("Is not a Leap Year");
     })
 
+    it("Year divisible by 4 but not 100 should be a leap year", ()=>{
+        yearText.simulate('change', { target: { value: 2012 } });
+        yearButton.simulate('click');
+        expect(wrapper.find("label").at(1).text()).toEqual("Is a Leap Year");
+    })
 }); 
