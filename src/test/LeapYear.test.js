@@ -26,3 +26,15 @@ describe(("<LeapYear/> component"), () => {
         expect(wrapper.find('label').at(1).length).toBe(1);
     });
   });
+
+  describe(("<LeapYear/>Leap year functionality"), () => {
+    let wrapper;
+    beforeEach(() => {
+      wrapper = shallow(<LeapYear />);
+    });
+    it("Year divisible by 400 should be a leap year", ()=>{
+        wrapper.find('input').at(0).simulate('change', { target: { value: 2000 } });
+        wrapper.find('button').simulate('click');
+        expect(wrapper.find("label").at(1).text()).toEqual("Is a Leap Year");
+    })
+}); 
