@@ -11,13 +11,17 @@ export default class LeapYear extends React.Component {
 
       isLeapYear(event) {
         var isLeapYear = false;
-        if(this.isDivisibleBy400() || this.isDivisibleBy4Not100()){
-            isLeapYear = true;
-        } 
-        if(isLeapYear){
-        this.setState({"isLeapYear": "Is a Leap Year"});
-        } else {
-            this.setState({"isLeapYear": "Is not a Leap Year"});
+        if(isNaN(this.state.year)){
+            this.setState({"isLeapYear": "Enter a valid year"});
+        } else { 
+            if(this.isDivisibleBy400() || this.isDivisibleBy4Not100()){
+                isLeapYear = true;
+            } 
+            if(isLeapYear){
+                this.setState({"isLeapYear": "Is a Leap Year"});
+            } else {
+                this.setState({"isLeapYear": "Is not a Leap Year"});
+            }
         }
     }
 
