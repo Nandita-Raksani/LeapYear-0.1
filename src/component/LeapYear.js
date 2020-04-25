@@ -11,7 +11,7 @@ export default class LeapYear extends React.Component {
 
       isLeapYear(event) {
         var isLeapYear = false;
-        if(isNaN(this.state.year)){
+        if(isNaN(this.state.year) || this.state.year != parseInt(this.state.year, 10)){
             this.setState({"isLeapYear": "Enter a valid year"});
         } else { 
             if(this.isDivisibleBy400() || this.isDivisibleBy4Not100()){
