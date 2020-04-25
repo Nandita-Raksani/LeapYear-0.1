@@ -28,19 +28,21 @@ describe(("<LeapYear/> component"), () => {
   });
 
   describe(("<LeapYear/>Leap year functionality"), () => {
-    let wrapper;
+    let wrapper, yearText, yearButton;
     beforeEach(() => {
       wrapper = shallow(<LeapYear />);
+      yearText = wrapper.find('input').at(0);
+      yearButton = wrapper.find('button');
     });
     it("Year divisible by 400 should be a leap year", ()=>{
-        wrapper.find('input').at(0).simulate('change', { target: { value: 2000 } });
-        wrapper.find('button').simulate('click');
+        yearText.simulate('change', { target: { value: 2000 } });
+        yearButton.simulate('click');
         expect(wrapper.find("label").at(1).text()).toEqual("Is a Leap Year");
     })
 
     it("Year divisible by 4 should be a leap year", ()=>{
-        wrapper.find('input').at(0).simulate('change', { target: { value: 2004 } });
-        wrapper.find('button').simulate('click');
+        yearText.simulate('change', { target: { value: 2004 } });
+        yearButton.simulate('click');
         expect(wrapper.find("label").at(1).text()).toEqual("Is a Leap Year");
     })
 }); 
