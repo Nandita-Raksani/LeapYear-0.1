@@ -9,7 +9,9 @@ This game is developed in React using Test Driven Development approach.
 2) All years divisible by 100 but not by 400 are NOT leap years e.g. 1700, 1800, 2100 and 1900 
 3) All years divisible by 4 but not by 100 ARE leap years e.g., 2008, 2012, 2016
 4) All years not divisible by 4 are NOT leap years e.g. 2017, 2018, 2019
-
+5) Years must not contain alphabets e.g. 1a
+6) Years must not be decimal/float e.g. 2.2
+7) Years must not be negative numbers e.g. -1
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
