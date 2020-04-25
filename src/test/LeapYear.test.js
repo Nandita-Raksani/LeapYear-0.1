@@ -69,4 +69,10 @@ describe(("<LeapYear/> component"), () => {
         yearButton.simulate('click');
         expect(wrapper.find("label").at(1).text()).toEqual("Enter a valid year");
     })
+
+    it("Year should not be a negative number", ()=>{
+        yearText.simulate('change', { target: {value: -1} });
+        yearButton.simulate('click');
+        expect(wrapper.find("label").at(1).text()).toEqual("Enter a valid year");
+    })
 }); 
