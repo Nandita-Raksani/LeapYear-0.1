@@ -10,10 +10,15 @@ export default class LeapYear extends React.Component {
       }
 
       isLeapYear(event) {
-        var isLeapYear = this.state.year/400;
+        var isLeapYear = false;
+        if(this.state.year % 400 === 0 ){
+            isLeapYear = true;
+        } else if(this.state.year % 4 === 0){
+            isLeapYear = true;
+        }
         if(isLeapYear){
         this.setState({"isLeapYear": "Is a Leap Year"});
-        }
+        } 
     }
 
     handleChange(event) {

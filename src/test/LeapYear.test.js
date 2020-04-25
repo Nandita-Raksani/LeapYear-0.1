@@ -37,4 +37,10 @@ describe(("<LeapYear/> component"), () => {
         wrapper.find('button').simulate('click');
         expect(wrapper.find("label").at(1).text()).toEqual("Is a Leap Year");
     })
+
+    it("Year divisible by 4 should be a leap year", ()=>{
+        wrapper.find('input').at(0).simulate('change', { target: { value: 2004 } });
+        wrapper.find('button').simulate('click');
+        expect(wrapper.find("label").at(1).text()).toEqual("Is a Leap Year");
+    })
 }); 
